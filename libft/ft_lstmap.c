@@ -3,34 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:54:50 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 15:19:20 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:58:16 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstmap(t_list *lst, void*(*f)(void *), void (*del)(void*))
+static void	free_list(t_list *lst, void (*del)(void *))
+{
+	t_list	*tmp;
+
+	while (lst)
+	{
+		tmp = lst->next;
+		del(lst->content);
+		free(lst);
+		lst = tmp;
+	}
+}
+
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_list;
-	t_list	*new_obj;
+	t_list	*new_elem;
 
 	if (!lst || !f || !del)
 		return (NULL);
-	new_list = ft_lstnew(f(lst->content));
-	if (!new_list)
-		return (NULL);
+	new_list = NULL;
 	while (lst)
 	{
-		new_obj = ft_lstnew(f(lst->content));
-		if (!new_obj)
+		new_elem = ft_lstnew(f(lst->content));
+		if (!new_elem)
 		{
-			ft_lstclear(&new_list, del);
+			free_list(new_list, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new_list, new_obj);
+		ft_lstadd_back(&new_list, new_elem);
 		lst = lst->next;
 	}
 	return (new_list);
