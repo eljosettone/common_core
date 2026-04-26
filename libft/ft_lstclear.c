@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:30:51 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 14:53:14 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:01:05 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ void	ft_lstclear(t_list **lst, void(*del)(void*))
 	while (*lst)
 	{
 		vide = (*lst)->next;
-		ft_lstdelone(lst, del);
-		lst = vide;
+		ft_lstdelone(*lst, del);
+		*lst = vide;
 	}
-	free(*lst);
 }

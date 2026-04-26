@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@learner.42.tech>        +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 18:09:58 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/21 18:36:00 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:18:25 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 	int	j;
@@ -25,9 +25,10 @@ char	*ft_strchr(const char *s, int c)
 			j = i;
 		i++;
 	}
+	if (j == 0)
+		j = i;
 	if (j != 0)
 		return ((char *) s + j);
-	return (0);
 }
 
 /*

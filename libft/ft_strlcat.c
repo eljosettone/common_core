@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:40:55 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 10:44:37 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:36:25 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	dst_len;
 
 	src_len = ft_strlen(src);
-	dst_len = ft_strlen(dest);
+	dst_len = ft_strlen(dst);
 	if (dst_len == size)
 	{
 		return (size + src_len);

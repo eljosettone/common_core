@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 08:54:24 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 09:50:31 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:33:06 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*result;
 
 	i = 0;
-	result = malloc(sizeof(char) * (len(s) + 1));
+	result = malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!result)
 		return (NULL);
 	while (i < len)
 	{
-		result[i] = (*f), (i, s[i]);
+		result[i] = (*f)(i, s[i]);
 		i++;
 	}
 	result[i] = '\0';

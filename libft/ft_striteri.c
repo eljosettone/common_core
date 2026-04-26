@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 09:36:12 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 09:50:39 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:33:40 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	i = 0;
 	while (s[i])
 	{
-		(*f), (i, &s[i]);
+		(*f)(i, &s[i]);
 		i++;
 	}
-	result[i] = '\0';
-	return (result);
 }
 
 /*

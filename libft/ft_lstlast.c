@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 13:15:22 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 14:49:38 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:00:10 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 	{
 		if (lst->next == NULL)
 		{
-			return (NULL);
+			return (lst);
 		}
 		lst = lst->next;
 	}

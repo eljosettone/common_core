@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 14:48:14 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 11:32:08 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:59:28 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 		{
 			return (str1[i] - str2[i]);
 		}
+		i++;
 	}
 	return (0);
 }

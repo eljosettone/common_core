@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 10:29:31 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 10:36:01 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:52:04 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*tmp;
 
-	tmp = unsigned char *b;
 	while (len > 0)
 	{
-		tmp = (unsigned char) c;
+		*tmp = (unsigned char) c;
 		tmp++;
 		len--;
 	}

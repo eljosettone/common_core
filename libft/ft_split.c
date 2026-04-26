@@ -3,31 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:41:11 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/23 17:52:57 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:15:41 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	ft_separator(char c, char *charset)
-{
-	int	i;
 
-	i = 0;
-	while (charset[i])
-	{
-		if (c == charset[i])
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-int	count_words(char *str, char *charset)
+int	count_words(const char *str, char c)
 {
 	int	count;
 	int	i;
@@ -36,31 +23,31 @@ int	count_words(char *str, char *charset)
 	i = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_separator(str[i], charset))
+		while (str[i] && str[i] == c)
 			i++;
-		if (str[i] && !ft_separator(str[i], charset))
+		if (str[i] && str[i] != c)
 		{
 			count++;
-			while (str[i] && !ft_separator(str[i], charset))
+			while (str[i] && str[i] != c)
 				i++;
 		}
 	}
 	return (count);
 }
 
-char	*malloc_word(char *str, char *charset)
+char	*malloc_word(const char *str, char c)
 {
 	char	*word;
 	int		i;
 
 	i = 0;
-	while (str[i] && !ft_separator(str[i], charset))
+	while (str[i] && str[i] != c)
 		i++;
 	word = malloc(sizeof(char) * (i + 1));
 	if (!word)
 		return (NULL);
 	i = 0;
-	while (str[i] && !ft_separator(str[i], charset))
+	while (str[i] && str[i] != c)
 	{
 		word[i] = str[i];
 		i++;
@@ -72,11 +59,37 @@ char	*malloc_word(char *str, char *charset)
 void	free_split(char **arr, int j)
 {
 	while (j > 0)
-		free(arr[--j]);
+	{
+		free(arr[j]);
+		j--;
+	}
 	free(arr);
 }
 
-char	**ft_split(char *str, char *charset)
+void	separation(const char *str, char **arr, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (str[i] && str[i] == c)
+		i++;
+	if (str[i] && s[i] != c)
+	{
+		arr[j] = malloc_word(&str[i], c);
+		if (!arr[j])
+		{
+			free_split(arr, j);
+			return (NULL);
+		}
+		j++;
+		while (str[i] && s[i] != c)
+			i++;
+	}
+}
+
+char	**ft_split(const char *str, char c)
 {
 	char	**arr;
 	int		i;
@@ -84,25 +97,12 @@ char	**ft_split(char *str, char *charset)
 
 	i = 0;
 	j = 0;
-	arr = malloc(sizeof(char *) * (count_words(str, charset) + 1));
+	arr = malloc(sizeof(char *) * (count_words(str, c) + 1));
 	if (!arr)
 		return (NULL);
 	while (str[i])
 	{
-		while (str[i] && ft_separator(str[i], charset))
-			i++;
-		if (str[i] && !ft_separator(str[i], charset))
-		{
-			arr[j] = malloc_word(&str[i], charset);
-			if (!arr[j])
-			{
-				free_split(arr, j);
-				return (NULL);
-			}
-			j++;
-			while (str[i] && !ft_separator(str[i], charset))
-				i++;
-		}
+		separation(str, arr, c);
 	}
 	arr[j] = NULL;
 	return (arr);

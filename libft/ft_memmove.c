@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:12:45 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/22 15:40:04 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:28:07 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	tmp_src = (char *) src;
 	if (tmp_src < tmp_dest)
 	{
-		while (n > 0)
+		while (n >= 0)
 		{
 			tmp_dest[n] = tmp_src[n];
 			n--;
 		}
-		else
-		{
-			while (i++ < len)
-				tmp_dest[i] = tmp_src[i];
-		}
+	}
+	else
+	{
+		while (i < n)
+			tmp_dest[i] = tmp_src[i];
+			i++;
 	}
 	return (dest);
 }

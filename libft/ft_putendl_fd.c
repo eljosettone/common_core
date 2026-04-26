@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 09:51:41 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 09:59:55 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 18:49:14 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void ft_putendl_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
-	while  (str[i])
+	while  (s[i])
 	{
-		write(fr, str[i], 1);
+		write(fd, &s[i], 1);
 		i++;
 	}
-	write (fr, "\n", 1);
+	write (fd, "\n", 1);
 }
 

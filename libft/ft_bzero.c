@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:30:00 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/22 15:52:15 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:06:19 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 	tmp = (char *)s;
 	while (n > 0)
 	{
-		tmp = 0;
+		*tmp = 0;
 		tmp++;
 		n--;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 17:19:15 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 10:17:35 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:22:48 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_atoi(const char *str)
 	signe = 1;
 	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 			signe *= -1;
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 int	main()
 {
 	char *str;
-	str = "   --+-+1234ab567";
+	str = "   --1234ab567";
 	printf("%d\n", ft_atoi(str));
 	return (0);
 }*/

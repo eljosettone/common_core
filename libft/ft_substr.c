@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 13:44:46 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/23 17:00:14 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/26 19:20:39 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*str;
 	int		biglen;
-
-	biglen = ft_strlen(s);
+	
 	if (!s)
 		return (NULL);
+	biglen = ft_strlen(s);
 	if (start > biglen)
-		return (ft_strdup(s));
+		return (ft_strdup(""));
 	if (len > biglen + start)
-		len = biglen + start;
+		len = biglen - start;
 	str = ft_calloc(len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
