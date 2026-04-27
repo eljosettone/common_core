@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/21 13:39:28 by fannyalle         #+#    #+#             */
-/*   Updated: 2026/04/26 19:04:20 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 13:13:32 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 177)
+	if (c >= 0 && c <= 127)
 		return (1);
 	return (0);
 }

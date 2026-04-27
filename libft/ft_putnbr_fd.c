@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 18:19:42 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 18:51:16 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 11:45:06 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, 1);
+	write (fd, &c, 1);
 }
 
 void	ft_putnbr_fd(int nb, int fd)
@@ -26,12 +26,12 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	if (nb < 0)
 	{
-		ft_putchar_fd('-');
+		ft_putchar_fd('-', fd);
 		nb = nb * -1;
 	}
 	if (nb >= 0 && nb < 10)
 	{
-		ft_putchar(nb + '0');
+		ft_putchar_fd(nb + '0', fd);
 	}
 	else
 	{

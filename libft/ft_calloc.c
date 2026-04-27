@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 15:00:58 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 19:05:36 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 09:57:46 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,16 @@ void	*ft_calloc(size_t n, size_t size)
 	}
 	return (tmp);
 }
+//  #include <stdio.h>
+//  int main()
+//  {
+// 	int *arr;
+// 	int	i;
+// 	i = 0;
+// 	arr = (int *)ft_calloc(5, sizeof(int));
+// 	while (i < 5)
+// 	{
+// 		printf("%d\n", arr[i]);
+// 		i++;
+// 	}
+//  }

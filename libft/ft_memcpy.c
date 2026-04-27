@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 12:38:35 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 18:52:33 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 10:55:57 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		return (dest);
 	}
 	tmp_dest = (unsigned char *) dest;
-	tmp_src = (unsigned char *)src;
+	tmp_src = (unsigned char *) src;
 	while (n > 0)
 	{
 		*tmp_dest = *tmp_src;

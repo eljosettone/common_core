@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 18:18:22 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 18:46:55 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 11:45:19 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_putstr_fd(char *str, int fd)
 {
 	if (!str)
-		return (NULL);
+		return ;
 	while (*str)
 	{
 		write (fd, str, 1);

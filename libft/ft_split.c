@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/23 17:41:11 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 19:57:26 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 09:18:29 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,10 @@ static int	fill_words(char **arr, const char *s, char c)
 static void	free_all(char **arr, int i)
 {
 	while (i >= 0)
-		free(arr[i--]);
+	{
+		free(arr[i]);
+		i--;
+	}
 	free(arr);
 }
 
@@ -106,7 +109,7 @@ char	**ft_split(char const *s, char c)
 //  {
 //  	char **arr;
 
-//  	arr = ft_split("bonsoa+++--ca+va     bien", "+- ");
+//  	arr = ft_split("bonsoa ca va     bien", ' ');
 // 	int i = 0;
 // 	if (!arr)
 // 		return (0);

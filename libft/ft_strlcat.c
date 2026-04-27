@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/22 13:40:55 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 18:36:25 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 14:24:54 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,19 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	src_len;
 	size_t	dst_len;
+	size_t	i;
 
+	i = 0;
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (dst_len == size)
-	{
+	if (size <= dst_len)
 		return (size + src_len);
-	}
-	if (src_len + dst_len < size)
+	while (src[i] && dst_len + i + 1 < size)
 	{
-		ft_memcpy(dst + dst_len, src, src_len + 1);
+		dst[dst_len + i] = src[i];
+		i++;
 	}
-	else
-	{
-		ft_memcpy(dst + dst_len, src, size - dst_len - 1);
-		dst[size - 1] = '\0';
-	}
+	dst[dst_len + i] = '\0';
 	return (dst_len + src_len);
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 11:07:22 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/24 11:28:29 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/27 10:34:01 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*new_node;
+
 	new_node = malloc(sizeof(t_list));
 	if (!new_node)
 		return (NULL);
@@ -22,3 +23,13 @@ t_list	*ft_lstnew(void *content)
 	new_node->next = NULL;
 	return (new_node);
 }
+
+// #include <stdio.h>
+// #include "lift.h"
+// int	main()
+// {
+// 	t_list *node;
+// 	node = ft_lstnew("caca");
+// 	printf("%s\n", (char *)node->content);
+// 	return (0);
+// }

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/24 14:54:50 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/26 20:03:38 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/27 11:43:46 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_list(char *list, void (*del)(void *))
+static void	free_list(t_list *lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
@@ -46,3 +46,41 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+// #include <stdio.h>
+// #include <stlib.h>
+
+// void	*fois_deux(void *v)
+// {
+// 	int *res;
+
+// 	res = malloc(sizeof(int));
+// 	*res = (*(int *)v) * 2;
+// 	return (res);
+// }
+// void	delete(void *v)
+// {
+// 	free(v);
+// }
+
+// int	main()
+// {
+// 	char *lst;
+// 	char *new;
+// 	int	*a;
+
+// 	a = malloc(sizeof(int));
+// 	b = malloc(sizeof(int));
+// 	int *a = 2;
+// 	int *b = 3;
+
+// 	lst = ft_lstnew(a);
+// 	ft_last_add_back(&lst, ft_lstnew(b));
+// 	new = ft_lastmap(lst, fois_deux, delete);
+
+// 	while (new)
+// 	{
+// 		printf("%d\n", *(int *)new->content)
+// 		new = mew->content;
+// 	}
+// 	return (0);
+// }
