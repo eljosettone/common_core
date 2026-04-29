@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 14:58:21 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 18:28:10 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 22:00:08 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 # include <stdarg.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_check(va_list arg, char c);
-int	ft_hexa_lower(int nbr);
-int	ft_hexa_upper(int nbr);
+int	ft_check(va_list *arg, char c);
+int	ft_hexa_lower(unsigned int nbr);
+int	ft_hexa_upper(unsigned int nbr);
 int	ft_putnbr(long nb);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);

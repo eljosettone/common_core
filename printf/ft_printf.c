@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:32:42 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 17:56:29 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 21:30:02 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ int	ft_printf(const char *str, ...)
 		{
 			if (str[i + 1] != '\0')
 			{
-				o += ft_check(arg, str[i + 1]);
-				i++;
+				o += ft_check(&arg, str[i + 1]);
+				i += 2;
 			}
 		}
 	}
