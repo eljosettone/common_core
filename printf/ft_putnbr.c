@@ -3,25 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/28 19:05:02 by fannyallegr       #+#    #+#             */
-/*   Updated: 2026/04/28 19:24:40 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/04/29 12:51:03 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int    ft_putnbr(long nb)
+#include "ft_printf.h"
+
+int	ft_putnbr(long nb)
 {
-    if (nb < 0)
-    {
-        write (1, '-', 1);
-        nb *= -1;
-    }
-    if (nb => 0 && nb <= 9)
-        write (1, (&nb + '0'), 1);
-    else
-    {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
-    }
+	if (nb < 0)
+	{
+		write (1, "-", 1);
+		nb *= -1;
+	}
+	if (nb >= 0 && nb <= 9)
+		write (1, ((char)nb + '0'), 1);
+	else
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }
