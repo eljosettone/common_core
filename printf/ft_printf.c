@@ -6,10 +6,11 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:32:42 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 14:12:21 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 14:46:08 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
 int	ft_printf(const char *str, ...)
 {

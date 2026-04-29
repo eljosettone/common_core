@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 19:05:02 by fannyallegr       #+#    #+#             */
-/*   Updated: 2026/04/29 12:51:03 by fanalleg         ###   ########.fr       */
+/*   Created: 2026/04/29 15:28:47 by fanalleg          #+#    #+#             */
+/*   Updated: 2026/04/29 16:00:43 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,26 @@
 
 int	ft_putnbr(long nb)
 {
+	int	i;
+
+	i = 0;
 	if (nb < 0)
 	{
-		write (1, "-", 1);
-		nb *= -1;
+		i += ft_putchar('-');
+		nb = nb * -1;
 	}
-	if (nb >= 0 && nb <= 9)
-		write (1, ((char)nb + '0'), 1);
+	if (nb >= 0 && nb < 10)
+		i += ft_putchar(nb + '0');
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		i += ft_putnbr((nb / 10));
+		i += ft_putnbr((nb % 10));
 	}
+	return (i);
 }
+
+// #include <stdio.h>
+// int	main()
+// {
+// 	printf("%d", ft_putnbr(-126888890098663));
+// }

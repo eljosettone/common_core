@@ -3,18 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
+/*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/28 19:18:27 by fannyallegr       #+#    #+#             */
-/*   Updated: 2026/04/28 19:19:31 by fannyallegr      ###   ########.fr       */
+/*   Created: 2026/04/29 15:26:43 by fanalleg          #+#    #+#             */
+/*   Updated: 2026/04/29 17:46:31 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int     ft_putstr(char *str)
+#include "ft_printf.h"
+
+int	ft_putstr(char *str)
 {
-    while (*str)
-    {
-        write (1, str, 1);
-        str++;
-    }
+	int	i;
+
+	if (!ptr)
+		return (write (1, "(null)", 6));
+	i = 0;
+	while (str[i])
+		i += ft_putchar(str[i]);
+	return (i);
 }
+// #include <stdio.h>
+// int	main()
+// {
+// 	printf("%d", ft_putstr("coucou"));
+// }

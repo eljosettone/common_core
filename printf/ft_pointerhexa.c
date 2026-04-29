@@ -1,40 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hexa_upper.c                                    :+:      :+:    :+:   */
+/*   ft_pointerhexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 14:21:44 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 17:02:37 by fanalleg         ###   ########.fr       */
+/*   Created: 2026/04/29 15:38:04 by fanalleg          #+#    #+#             */
+/*   Updated: 2026/04/29 17:45:54 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_hexa_upper(int nbr)
+int	ft_pointerhexa(void *ptr)
 {
-	char	*base;
-	int		i;
+	char			*base;
+	int				i;
+	unsigned long	nb;
 
-	base = "0123456789ABCDEF";
+	base = "0123456789abcdef";
 	i = 0;
-	if (nbr < 0)
+	nb = (unsigned long)ptr;
+	if (nb >= 16)
 	{
-		i += write (1, "-", 1);
-		nbr *= -1;
-	}
-	if (nbr >= 16)
-	{
-		i += ft_hexa_upper (nbr / 16);
-		i += ft_hexa_upper (nbr % 16);
+		i += ft_pointerhexa((void *)(nb / 16));
+		i += ft_pointerhexa((void *)(nb % 16));
 	}
 	else
-		i += ft_putchar(base[nbr % 16]);
+		i += ft_putchar(base[nb % 16]);
+	return (i);
+}
+
+int	ft_print_hex(void *ptr)
+{
+	int	i;
+
+	i = 0;
+	if (!ptr)
+		return (write (1, "(null)", 6));
+	i += write(1, "0x", 2);
+	i += ft_pointerhexa(ptr);
 	return (i);
 }
 #include <stdio.h>
 int	main()
 {
-	printf("%i", ft_hexa_upper(-11234));
+	char *i= "saut ca va";
+	printf("%d", ft_print_hex((void *)i));
 }

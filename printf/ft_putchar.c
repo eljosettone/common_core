@@ -5,13 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/29 10:38:49 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 10:38:56 by fanalleg         ###   ########.fr       */
+/*   Created: 2026/04/29 15:25:26 by fanalleg          #+#    #+#             */
+/*   Updated: 2026/04/29 16:44:12 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar(char c)
 {
-	write (fd, &c, 1);
+	return (write (1, &c, 1));
 }
