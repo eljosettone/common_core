@@ -6,7 +6,7 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:51:19 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 16:53:23 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 18:27:40 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	ft_check(va_list arg, char c)
 	if (c == 's')
 		res = ft_putstr(va_arg(arg, char *));
 	if (c == 'p')
-		res = ft_pointhexa();
+		res = ft_point_hexa (va_arg(arg, void *));
 	if (c == 'i' || c == 'd')
 		res = ft_putnbr(va_arg(arg, int));
 	if (c == 'u')
-		res = ft_putunbr(va_arg(arg, int));
+		res = ft_putunbr(va_arg(arg, unsigned int));
 	if (c == 'x')
 		res = ft_hexa_lower(va_arg(arg, int));
 	if (c == 'X')

@@ -6,19 +6,18 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 14:40:10 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 16:46:20 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 18:28:30 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
 
 int	ft_putunbr(unsigned long nb)
 {
 	int	i;
 
 	i = 0;
-	if (nb >= 0 && nb <= 9)
+	if (nb <= 9)
 		i += ft_putchar(nb + '0');
 	else
 	{

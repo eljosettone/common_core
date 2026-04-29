@@ -6,7 +6,7 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 14:21:44 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 17:02:37 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 18:28:22 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	ft_hexa_upper(int nbr)
 		i += ft_putchar(base[nbr % 16]);
 	return (i);
 }
-#include <stdio.h>
-int	main()
-{
-	printf("%i", ft_hexa_upper(-11234));
-}
+// #include <stdio.h>
+// int	main()
+// {
+// 	printf("%i", ft_hexa_upper(-11234));
+// }

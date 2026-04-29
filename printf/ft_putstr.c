@@ -6,7 +6,7 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 15:26:43 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 17:46:31 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 18:28:35 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_putstr(char *str)
 {
 	int	i;
 
-	if (!ptr)
+	if (!str)
 		return (write (1, "(null)", 6));
 	i = 0;
 	while (str[i])

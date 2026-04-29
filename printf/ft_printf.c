@@ -6,7 +6,7 @@
 /*   By: fanalleg <fanalleg@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/29 10:32:42 by fanalleg          #+#    #+#             */
-/*   Updated: 2026/04/29 14:46:08 by fanalleg         ###   ########.fr       */
+/*   Updated: 2026/04/29 17:56:29 by fanalleg         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] != '%')
 		{
-			o += ft_putchar_fd(str[i]);
+			o += ft_putchar(str[i]);
 			i++;
 		}
 		else
