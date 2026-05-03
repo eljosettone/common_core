@@ -6,7 +6,7 @@
 /*   By: fannyallegre <fannyallegre@student.42.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/01 17:09:24 by fannyallegr       #+#    #+#             */
-/*   Updated: 2026/05/01 17:19:07 by fannyallegr      ###   ########.fr       */
+/*   Updated: 2026/05/03 12:08:51 by fannyallegr      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,29 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+char	*ft_strdup(char *src)
+{
+	int		i;
+	char	*des;
+
+	if (src == NULL)
+		return (0);
+	i = 0;
+	while (src[i])
+	{
+		i++;
+	}
+	des = malloc(sizeof(char) * (i + 1));
+	if (des == NULL)
+		return (0);
+	i = 0;
+	while (src[i])
+	{
+		des[i] = src[i];
+		i++;
+	}
+	des[i] = '\0';
+	return (des);
 }
